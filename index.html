@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Mendeleev Elements Search</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <h1>Search Elements By...</h1>
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Enter a value..." />
+    </div>
+    <div class="buttons">
+        <button onclick="search('number')">Atomic Number</button>
+        <button onclick="search('name')">Name</button>
+        <button onclick="search('symbol')">Symbol</button>
+        <button onclick="search('mass')">Mass</button>
+    </div>
+    <div class="result" id="resultBox">
+        <p><strong>Atomic Number:</strong> <span id="num">N/A</span></p>
+        <p><strong>Element Name:</strong> <span id="name">N/A</span></p>
+        <p><strong>Element Symbol:</strong> <span id="symbol">N/A</span></p>
+        <p><strong>Atomic Mass:</strong> <span id="mass">N/A</span></p>
+        <p><strong>Electron Configuration:</strong> <span id="config">N/A</span></p>
+    </div>
+
+    <p style="text-align: right; font-size: 0.9rem; margin-top: 2rem; color: #888; width: 100%; max-width: 500px;">
+        Developed by Arko • <a href="https://www.instagram.com/_lysosome_007" style="color: #00FFCE; text-decoration: none;" target="_blank">@_lysosome_007</a>
+    </p>
+
+    <script>
+        async function search(type) {
+            const input = document.getElementById("searchInput").value.trim().toLowerCase();
+            const response = await fetch("elements.json");
+            const elements = await response.json();
+
+            let found = null;
+            for (const [number, data] of Object.entries(elements)) {
+                if (
+                    (type === "number" && number === input) ||
+                    (type === "name" && data.name.toLowerCase() === input) ||
+                    (type === "symbol" && data.symbol.toLowerCase() === input) ||
+                    (type === "mass" && data.mass === input)
+                ) {
+                    found = { number, ...data };
+                    break;
+                }
+            }
+
+            const fadeIn = (id, text) => {
+                const el = document.getElementById(id);
+                el.style.opacity = 0;
+                el.textContent = text;
+                setTimeout(() => (el.style.opacity = 1), 50);
+            };
+
+            if (found) {
+                fadeIn("num", found.number);
+                fadeIn("name", found.name);
+                fadeIn("symbol", found.symbol);
+                fadeIn("mass", found.mass);
+                fadeIn("config", found.config);
+            } else {
+                fadeIn("num", "Not Found");
+                fadeIn("name", "Not Found");
+                fadeIn("symbol", "Not Found");
+                fadeIn("mass", "Not Found");
+                fadeIn("config", "Not Found");
+            }
+        }
+    </script>
+</body>
+</html>
