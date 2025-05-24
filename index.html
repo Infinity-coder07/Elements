@@ -20,7 +20,7 @@
     <div class="result" id="resultBox">
 
 
-        <p><strong></strong>Atomic Number : </strong> <span id="num">N/A</span></p>
+        <p><strong></strong>Atomic Number 01 : </strong> <span id="num">N/A</span></p>
         <p><strong></strong>Element Name : </strong> <span id="name">N/A</span></p>
         <p><strong></strong>Symbol : </strong> <span id="symbol">N/A</span></p>
         <p><strong></strong>Atomic Mass (amu) : </strong> <span id="amu">N/A</span></p>
@@ -33,6 +33,11 @@
         <p><strong></strong>Color : </strong> <span id="color">N/A</span></p>
         <p><strong></strong>Electron Configuration : </strong> <span id="config">N/A</span></p>
         <p><strong></strong>Electronegativity (Pauling) : </strong> <span id="pauling">N/A</span></p>
+
+        <p><strong></strong>Electron Affinity (eV) : </strong> <span id="ev">N/A</span></p>
+        <p><strong></strong>Atomic Radius (van der Waals, pm) : </strong> <span id="atomrad">N/A</span></p>
+        <p><strong></strong>First Ionization Enthalpy (eV) : </strong> <span id="ion">N/A</span></p>
+
         <p><strong></strong>Density (g/cm³) : </strong> <span id="density">N/A</span></p>
         <p><strong></strong>Melting Point (K) : </strong> <span id="melting">N/A</span></p>
         <p><strong></strong>Boiling Point (K) : </strong> <span id="boiling">N/A</span></p>
@@ -102,6 +107,9 @@
                 fadeIn("yod", found.yod);
                 fadeIn("sc", found.sc);
                 fadeIn("use", found.use);
+                fadeIn("ev", found.ev);
+                fadeIn("atomrad", found.atomrad);
+                fadeIn("ion", found.ion);
                 
 
 
@@ -123,13 +131,16 @@
                 fadeIn("density", "Not Found");
                 fadeIn("melting", "Not Found");
                 fadeIn("boiling", "Not Found");
-                fadeIn("heat", "Not Found");
+                fadeInheat("heat", "Not Found");
                 fadeIn("cos", "Not Found");
                 fadeIn("type", "Not Found");
                 fadeIn("discoverer", "Not Found");
                 fadeIn("yod", "Not Found");
                 fadeIn("sc", "Not Found");
                 fadeIn("use", "Not Found");
+                fadeIn("ev", "Not Found");
+                fadeIn("atomrad", "Not Found");
+                fadeIn("ion", "Not Found");
                 
             }
         }
