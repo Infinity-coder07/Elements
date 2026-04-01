@@ -10,8 +10,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2rem;
-    animation: fadeIn 1s ease-in;
+    /* padding: 2rem; */
+    animation: fadeIn 0.5s ease-in;
 }
 
 @keyframes fadeIn {
@@ -27,8 +27,10 @@ body {
 }
 
 h1 {
-    font-size: 250%;
-    font-family: "Bad Script", monospace;
+    text-align: center;
+    width: 100%;
+    font-size: 7.5vmin;
+    font-family: monospace;
     margin-bottom: 1rem;
     animation: popIn 0.6s ease-in-out;
 
@@ -37,6 +39,13 @@ h1 {
     user-select: none;
 
 }
+
+/* @media screen and (min-width:600px) {
+    h1{
+font-size: 7vmin;
+    }
+    
+} */
 
 @keyframes popIn {
     0% {
@@ -57,7 +66,7 @@ h1 {
 
 input {
     padding: 0.5rem;
-    width: 75vw;
+    width: 85vw;
     max-width: 350px;
     font-size: 1rem;
     border: none;
@@ -71,9 +80,13 @@ input:focus {
 }
 
 .buttons {
-    /* width: 75vw; */
+    /* margin-left: auto;
+    margin-right: auto; */
+    width: 90vw;
+    max-width: 600px;
     display: flex;
     gap: 0.5rem;
+    justify-content: center;
     margin-bottom: 1rem;
     animation: fadeIn 1s ease-in 0.4s backwards;
 }
@@ -102,14 +115,15 @@ button:hover {
 
 .result {
     text-align: left;
-    width: 100%;
-    max-width: 500px;
+    width: 88vw;
+    max-width: 600px;
     background: #000000;
     padding: 1rem;
     border-radius: 10px;
     margin-top: 1rem;
     transition: opacity 0.3s ease;
     color: #c352c7;
+    font-size: 0.85rem;
 }
 
 .result p {
