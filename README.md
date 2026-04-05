@@ -63,13 +63,13 @@ The application returns the following information for each element:
 
 ## 📂 Project Structure
 
+```
 Elements/
-
-│── index.html
-│── style.css
-│── data.js
-│── icons/
-
+├── index.html
+├── style.css
+├── data.js
+└── icons/
+```
 
 ---
 
