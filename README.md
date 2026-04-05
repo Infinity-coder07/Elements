@@ -65,9 +65,11 @@ The application returns the following information for each element:
 
 Elements/
 │── index.html
+
 │── style.css
+
 │── data.js
-│── assets/
+
 │── icons/
 
 
